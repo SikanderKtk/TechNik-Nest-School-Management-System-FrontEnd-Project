@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — School Management System</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Chart.js for a simple fees/expenses chart like the screenshot -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body data-page="dashboard">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">SMS</div>
+    <nav class="menu">
+      <a href="index.html" class="active"><span>🏠</span> Dashboard</a>
+      <a href="./students.html"><span>🎓</span> Students</a>
+      <a href="./teachers.html"><span>👩‍🏫</span> Teachers</a>
+      <a href="./classes.html"><span>🏫</span> Classes</a>
+      <a href="./attendence.html"><span>🗓️</span> Attendance</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <header class="topbar">
+      <div class="left">
+        <h1>Welcome to School Management System</h1>
+      </div>
+      <div class="right">
+        <input class="search" placeholder="Search…" />
+        <div class="pill">Admin</div>
+      </div>
+    </header>
+
+    <!-- KPI Cards -->
+    <section class="cards">
+      <div class="card kpi green">
+        <div class="kpi-title">Students</div>
+        <div id="kpiStudents" class="kpi-value">0</div>
+      </div>
+      <div class="card kpi blue">
+        <div class="kpi-title">Teachers</div>
+        <div id="kpiTeachers" class="kpi-value">0</div>
+      </div>
+      <div class="card kpi orange">
+        <div class="kpi-title">Classes</div>
+        <div id="kpiClasses" class="kpi-value">0</div>
+      </div>
+      <div class="card kpi red">
+        <div class="kpi-title">Attendance (Today)</div>
+        <div id="kpiAttendance" class="kpi-value">0</div>
+      </div>
+    </section>
+
+    <!-- Grid widgets -->
+    <section class="grid grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h3>Fees Collection & Expenses</h3>
+        </div>
+        <canvas id="feesChart"></canvas>
+
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Notice Board</h3>
+        </div>
+        <ul class="list">
+          <li>📝 Exam week starts 1st Sept.</li>
+          <li>👪 Parent–Teacher meeting on 25th Aug.</li>
+          <li>🇵🇰 Holiday on 14th Aug.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h3>Event Calendar (Demo)</h3>
+        </div>
+        <div class="calendar">
+          <div class="calendar-row calendar-head">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+          <div class="calendar-row">
+            <span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+          </div>
+          <div class="calendar-row">
+            <span>7</span><span>8</span><span>9</span><span>10</span><span
+              class="dot">11</span><span>12</span><span>13</span>
+          </div>
+          <div class="calendar-row">
+            <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+          </div>
+          <div class="calendar-row">
+            <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span
+              class="dot">26</span><span>27</span>
+          </div>
+          <div class="calendar-row">
+            <span>28</span><span>29</span><span>30</span><span>31</span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Recent Activities</h3>
+        </div>
+        <ul class="list">
+          <li>✅ Attendance marked for Class 10-A.</li>
+          <li>➕ New student added: Ayesha.</li>
+          <li>✏️ Teacher updated profile: Mr. Khan.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script>
+    // Dashboard bootstrap
+    window.addEventListener('DOMContentLoaded', () => {
+      SMS.updateKPIs();
+      // Simple chart demo
+      // Simple chart demo
+      const ctx = document.getElementById('feesChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['18,000', '16,000', '12,000', '5,000'],
+          datasets: [
+            {
+              label: 'Collections',
+              data: [18, 16, 12, 5],
+              backgroundColor: '#2563eb'
+            },
+            {
+              label: 'Fees',
+              data: [15, 12, 9, 4],
+              backgroundColor: '#f39c12'
+            },
+            {
+              label: 'Expenses',
+              data: [8, 5, 3, 2],
+              backgroundColor: '#e74c3c'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 0 },   // 🚀 disables moving animation
+          plugins: { legend: { position: 'bottom' } },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: { stepSize: 5 }
+            }
+          }
+        }
+      });
+
+    });
+  </script>
+</body>
+
+</html>
