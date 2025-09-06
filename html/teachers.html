@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers — SMS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="teachers">
+  <aside class="sidebar">
+    <div class="brand">SMS</div>
+    <nav class="menu">
+      <a href="./index.html"> Dashboard</a>
+      <a href="./students.html"> Students</a>
+      <a href="./teachers.html" class="active">👩 Teachers</a>
+      <a href="./classes.html"> Classes</a>
+      <a href="./attendence.html"> Attendance</a>
+      <a href="./fees.html"> Fees</a>
+    </nav>
+    <button id="toggleTheme" class="btn small">🌙 Dark Mode</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Teachers</h1>
+      <div class="right">
+        <input id="teacherSearch" class="search" placeholder="Search teachers…" />
+      </div>
+    </header>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h3>Add / Edit Teacher</h3>
+        <form id="teacherForm" class="form">
+          <input type="hidden" id="teacherId" />
+          <label>Name <input id="teacherName" required /></label>
+          <label>Subject <input id="teacherSubject" required /></label>
+          <label>Email <input id="teacherEmail" type="email" required /></label>
+          <label>Phone <input id="teacherPhone" required /></label>
+          <div class="actions">
+            <button class="btn primary" type="submit">Save</button>
+            <button class="btn" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Teachers List</h3>
+        <table class="table" id="teachersTable">
+          <thead><tr><th>#</th><th>Name</th><th>Subject</th><th>Email</th><th>Phone</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/teachers.js"></script>
+</body>
+</html>

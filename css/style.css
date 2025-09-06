@@ -1,0 +1,370 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  display: flex;
+  line-height: 1.5;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+  width: 220px;
+  background: #1e2a38;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.sidebar .brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f1c40f;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.sidebar .menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebar .menu a {
+  text-decoration: none;
+  color: #bdc3c7;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 15px;
+}
+.sidebar .menu a:hover,
+.sidebar .menu a.active {
+  background: #34495e;
+  color: #fff;
+}
+.sidebar .btn.small {
+  margin-top: 20px;
+  background: #f39c12;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ========== MAIN AREA ========== */
+.main {
+  flex: 1;
+  margin-left: 220px;
+  padding: 20px;
+}
+
+/* ========== TOPBAR ========== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.topbar h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.topbar .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar .search {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.pill {
+  background: #3498db;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* ========== CARDS ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.card {
+  background: #1be2c1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+/* ========== DASHBOARD NOTICE BOARD ========== */
+.card.notice {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  border-left: 6px solid #2980b9;
+}
+
+.card.notice h3 {
+  background: #2980b9;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: -20px -20px 15px -20px; /* stretch header across */
+}
+
+.card.notice ul li {
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background: #f8f9fa;
+  transition: 0.3s;
+}
+.card.notice ul li:hover {
+  background: #e8f0fe;
+  transform: translateX(5px);
+}
+
+/* ========== DASHBOARD NOTICE BOARD ========== */
+.card.fees {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  border-left: 6px solid #2980b9;
+}
+
+.card.fees h3 {
+  background: #2980b9;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: -20px -20px 15px -20px; /* stretch header across */
+}
+
+
+.card.fees ul li:hover {
+  background: #e8f0fe;
+  transform: translateX(5px);
+}
+
+
+.card:hover {
+  transform: translateY(-3px);
+}
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.kpi {
+  text-align: center;
+  font-size: 18px;
+}
+.kpi div:last-child {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.kpi.green { border-top: 5px solid #27ae60; }
+.kpi.blue { border-top: 5px solid #2980b9; }
+.kpi.orange { border-top: 5px solid #f39c12; }
+.kpi.red { border-top: 5px solid #c0392b; }
+
+/* ========== GRID ========== */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: repeat(3,1fr); }
+
+/* ========== TABLES ========== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  border: 1px solid #eee;
+  padding: 8px;
+  text-align: left;
+}
+.table th {
+  background: #f4f6f9;
+  font-weight: 600;
+}
+.table tr:nth-child(even) {
+  background: #fafafa;
+}
+.table .actions button {
+  margin-right: 5px;
+}
+
+/* ========== FORMS ========== */
+.form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.form input, .form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+.actions {
+  margin-top: 10px;
+}
+.btn {
+  padding: 8px 12px;
+  background: #bdc3c7;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn.primary {
+  background: #3498db;
+  color: #fff;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ========== LISTS ========== */
+.list {
+  list-style: none;
+}
+.list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ========== CHART FIX ========== */
+#feesChart, #feesReport {
+  width: 100% !important;
+  height: 260px !important;
+}
+
+/* ========== DARK MODE ========== */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+body.dark .sidebar {
+  background: #111827;
+}
+body.dark .sidebar .menu a {
+  color: #9ca3af;
+}
+body.dark .sidebar .menu a:hover,
+body.dark .sidebar .menu a.active {
+  background: #374151;
+  color: #fff;
+}
+body.dark .main, body.dark .card, body.dark .topbar {
+  background: #1f2937;
+  color: #eee;
+}
+body.dark .table th {
+  background: #374151;
+  color: #fff;
+}
+body.dark .form input, 
+body.dark .form select, 
+body.dark .topbar .search {
+  background: #111;
+  color: #eee;
+  border: 1px solid #444;
+}
+/* ====== DARK MODE FIXES ====== */
+body.dark .card.notice {
+  background: #1f2937;              /* dark background */
+  border-left: 6px solid #0ea5e9;   /* blue border */
+}
+
+body.dark .card.notice h3 {
+  background: #0ea5e9;              /* keep blue header */
+  color: #fff;
+}
+
+body.dark .card.notice ul li {
+  background: #111827;
+  color: #e5e7eb;                   /* light gray text */
+}
+body.dark .card.notice ul li:hover {
+  background: #1e293b;
+}
+
+/* ====== DARK MODE FOR RECENT ACTIVITIES ====== */
+body.dark .card.activities {
+  background: #1f2937;
+  border-left: 6px solid #7c3aed;   /* purple border */
+}
+body.dark .card.activities h3 {
+  background: #7c3aed;
+  color: #fff;
+}
+body.dark .card.activities ul li {
+  background: #111827;
+  color: #e5e7eb;
+}
+body.dark .card.activities ul li:hover {
+  background: #1e1b29;
+}
+body.dark .card.activities .time {
+  color: #c4b5fd;   /* light purple */
+}
+
+
+
+
+
+/* ========== RECENT ACTIVITIES ========== */
+.card.activities h3 {
+  background: #7c3aed;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: -20px -20px 15px -20px;
+}
+.card.activities ul li {
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background: #f3f0ff;
+  transition: 0.3s;
+  font-size: 14px;
+}
+.card.activities ul li:hover {
+  background: #ede9fe;
+  transform: translateX(5px);
+}
+.card.activities .time {
+  color: #7c3aed;
+  font-weight: bold;
+  margin-right: 6px;
+}

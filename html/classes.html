@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes — SMS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="classes">
+  <aside class="sidebar">
+    <div class="brand">SMS</div>
+    <nav class="menu">
+      <a href="./index.html"> Dashboard</a>
+      <a href="./students.html"> Students</a>
+      <a href="./teachers.html"> Teachers</a>
+      <a href="./classes.html" class="active"> Classes</a>
+      <a href="./attendence.html"> Attendance</a>
+      <a href="./fees.html"> Fees</a>
+    </nav>
+    <button id="toggleTheme" class="btn small">🌙 Dark Mode</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Classes</h1>
+    </header>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h3>Create / Edit Class</h3>
+        <form id="classForm" class="form">
+          <input type="hidden" id="classId" />
+          <label>Class Name <input id="className" required /></label>
+          <label>Section <input id="classSection" required /></label>
+          <label>Assign Teacher <select id="classTeacher"></select></label>
+          <label>Add Students <select id="classStudents" multiple size="6"></select></label>
+          <div class="actions">
+            <button class="btn primary" type="submit">Save</button>
+            <button class="btn" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Classes List</h3>
+        <table class="table" id="classesTable">
+          <thead><tr><th>#</th><th>Class</th><th>Section</th><th>Teacher</th><th>Students</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/classes.js"></script>
+</body>
+</html>
