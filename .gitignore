@@ -1,0 +1,31 @@
+# Node modules (if you used npm for any tooling)
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# VS Code settings
+.vscode/
+.history/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build/output folders (if you generate any)
+dist/
+build/
+
+# Environment variables (if any)
+.env
+
+# Optional cache folders
+.cache/
