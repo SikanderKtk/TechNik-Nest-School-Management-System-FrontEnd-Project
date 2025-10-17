@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +8,13 @@
   <link rel="stylesheet" href="./css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body data-page="fees">
-  <aside class="sidebar">
+
+  <!-- Hamburger icon (top-right) -->
+  <button class="hamburger" id="hamburger">&#9776;</button>
+
+  <aside class="sidebar" id="sidebar">
     <div class="brand">SMS</div>
     <nav class="menu">
       <a href="./index.html"> Dashboard</a>
@@ -32,7 +38,7 @@
         <form id="feeForm" class="form">
           <label>Student <select id="feeStudent"></select></label>
           <label>Amount <input type="number" id="feeAmount" required /></label>
-          <label>Status 
+          <label>Status
             <select id="feeStatus">
               <option value="Paid">Paid</option>
               <option value="Pending">Pending</option>
@@ -47,7 +53,14 @@
       <div class="card">
         <h3>Fee Records</h3>
         <table class="table" id="feesTable">
-          <thead><tr><th>#</th><th>Student</th><th>Amount</th><th>Status</th></tr></thead>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Student</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
           <tbody></tbody>
         </table>
       </div>
@@ -62,4 +75,5 @@
   <script src="./js/app.js"></script>
   <script src="./js/fees.js"></script>
 </body>
+
 </html>
