@@ -1,3 +1,4 @@
+
 /* ========== RESET ========== */
 * {
   margin: 0;
@@ -368,3 +369,144 @@ body.dark .card.activities .time {
   font-weight: bold;
   margin-right: 6px;
 }
+
+
+
+
+
+
+
+
+/* ========== RESPONSIVENESS ========== */
+
+/* ===== Tablets and Small Laptops (max-width: 1024px) ===== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+    padding: 15px 10px;
+  }
+
+  .main {
+    margin-left: 180px;
+    padding: 15px;
+  }
+
+  .topbar h1 {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Large Mobiles and Tablets (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .sidebar .brand {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+
+  .sidebar .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sidebar .menu a {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .table th, .table td {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .form label {
+    font-size: 13px;
+  }
+}
+
+/* ===== Small Mobiles (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  .sidebar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sidebar .menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar .menu a {
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+  }
+
+  .topbar h1 {
+    font-size: 16px;
+  }
+
+  .pill {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .kpi div:last-child {
+    font-size: 22px;
+  }
+
+  .table th, .table td {
+    font-size: 12px;
+  }
+
+  .btn, .btn.primary {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
