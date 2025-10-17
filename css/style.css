@@ -510,3 +510,71 @@ body.dark .card.activities .time {
   }
 }
 
+
+
+
+
+
+
+
+
+
+/* ========== RESPONSIVE COLLAPSIBLE SIDEBAR ========== */
+
+/* Hide checkbox by default */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #1e2a38;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: 0.3s;
+}
+
+/* ===== Responsive Sidebar Toggle ===== */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Initially hide sidebar */
+  .sidebar {
+    position: fixed;
+    left: -220px;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+    background: #1e2a38;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  /* Show sidebar when toggle is checked */
+  #menu-toggle:checked + .hamburger + .main,
+  #menu-toggle:checked ~ .sidebar {
+    left: 0;
+  }
+
+  /* Dim main area when sidebar is open */
+  #menu-toggle:checked + .hamburger {
+    background: #34495e;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 15px;
+    transition: 0.3s;
+  }
+}
