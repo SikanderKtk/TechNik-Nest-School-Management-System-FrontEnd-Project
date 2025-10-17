@@ -83,3 +83,22 @@ function importFromCSV(file, callback) {
   };
   reader.readAsText(file);
 }
+
+// ====== HAMBURGER MENU TOGGLE ======
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.getElementById("sidebar");
+
+  hamburger.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    hamburger.classList.toggle("active");
+  });
+
+  // Optional: close sidebar when a link is clicked (good UX)
+  document.querySelectorAll(".sidebar a").forEach(link => {
+    link.addEventListener("click", () => {
+      sidebar.classList.remove("open");
+      hamburger.classList.remove("active");
+    });
+  });
+});

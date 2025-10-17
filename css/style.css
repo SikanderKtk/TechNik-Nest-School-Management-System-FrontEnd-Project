@@ -514,67 +514,78 @@ body.dark .card.activities .time {
 
 
 
-
-
-
-
-
 /* ========== RESPONSIVE COLLAPSIBLE SIDEBAR ========== */
 
-/* Hide checkbox by default */
-#menu-toggle {
-  display: none;
-}
+/* ======= HAMBURGER MENU FOR MOBILE ======= */
 
 /* Hamburger icon styling */
 .hamburger {
-  display: none;
+  display: none; /* hidden on desktop */
   position: fixed;
   top: 15px;
-  left: 15px;
+  right: 15px;
   background: #1e2a38;
   color: #fff;
   padding: 8px 12px;
+  border: none;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
-  z-index: 1001;
-  transition: 0.3s;
+  z-index: 2001;
+  transition: background 0.3s, transform 0.3s;
+}
+.hamburger:hover {
+  background: #34495e;
 }
 
-/* ===== Responsive Sidebar Toggle ===== */
+/* Sidebar slide-in behavior for mobile */
 @media (max-width: 768px) {
-  /* Show hamburger */
   .hamburger {
     display: block;
   }
 
-  /* Initially hide sidebar */
   .sidebar {
     position: fixed;
-    left: -220px;
     top: 0;
-    bottom: 0;
+    left: -240px; /* hidden initially */
     width: 220px;
+    height: 100%;
     background: #1e2a38;
-    transition: 0.3s;
-    z-index: 1000;
+    transition: left 0.3s ease;
+    z-index: 2000;
   }
 
-  /* Show sidebar when toggle is checked */
-  #menu-toggle:checked + .hamburger + .main,
-  #menu-toggle:checked ~ .sidebar {
+  .sidebar.open {
+    left: 0; /* slide in */
+  }
+
+  /* Dim main area when sidebar open */
+  .sidebar.open ~ .main::before {
+    content: "";
+    position: fixed;
+    top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1500;
   }
 
-  /* Dim main area when sidebar is open */
-  #menu-toggle:checked + .hamburger {
-    background: #34495e;
+  /* prevent body scroll when menu open */
+  body.sidebar-open {
+    overflow: hidden;
   }
 
+  /* Make main area full width on mobile */
   .main {
     margin-left: 0;
     padding: 15px;
-    transition: 0.3s;
   }
 }
+
+/* Animate hamburger icon when active */
+.hamburger.active {
+  transform: rotate(90deg);
+  background: #34495e;
+}
+
